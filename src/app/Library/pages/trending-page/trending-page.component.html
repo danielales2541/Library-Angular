@@ -1,0 +1,11 @@
+
+<header>
+  <app-header />
+  @if (modalService.modalAbierto()) {
+    <modal-form [usuario]="modalService.datosModal()" />
+  }
+</header>
+
+<section>
+  <list [users]="userService.Users()" />
+</section>

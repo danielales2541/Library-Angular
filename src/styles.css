@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5); /* semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.snackbar-success {
+  background-color: #4c9baf;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px; /* Un valor más práctico y moderno que 5cm */
+  padding: 16px 24px; /* Un poco más de espacio para que se vea mejor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Animación de entrada y salida */
+  animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+
+.snackbar-error {
+  background-color: #d83f2b;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px; /* Un valor más práctico y moderno que 5cm */
+  padding: 16px 24px; /* Un poco más de espacio para que se vea mejor */
+  box-shadow: 0 4px 8px rgba(201, 188, 188, 0.2);
+  /* Animación de entrada y salida */
+  animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
