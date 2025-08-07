@@ -56,9 +56,8 @@ export class ModalFormComponent implements OnInit {
       const userId = this.usuario.id;
       const datos = { ...this.form.value, id: userId };     
       
-      this.http.put(`${environment.BasicUrl}/users`, datos, { headers }).subscribe({
+      this.http.put(`${environment.BasicUrl}/users`, datos, { headers,observe: 'response' }).subscribe({
         next: res => {
-        console.log('Desactivado en el servicio', res);
         this.snackBar.open('Usuario actualizado correctamente ✅', 'Cerrar', {
           duration: 3000,
           verticalPosition: 'top',
@@ -68,8 +67,8 @@ export class ModalFormComponent implements OnInit {
           this.cerrarModal();
         },
         error: (error) => {
-         console.error('Error en el servicio', error);
-        this.snackBar.open('Error al actualizar el usuario ❌', 'Cerrar', {
+         console.error('Error en el servicio', error.error.message);
+        this.snackBar.open(`${error.error.message}❌`, 'Cerrar', {
           duration: 3000,
           verticalPosition: 'top',
           horizontalPosition: 'right',

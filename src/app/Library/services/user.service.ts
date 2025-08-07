@@ -36,7 +36,6 @@ export class UsersService {
         const users = getUser.mapUserArray(resp);
         this.Users.set(resp);
         this.userLoading.set(false);
-        console.log(users);
       })
     );
   }
