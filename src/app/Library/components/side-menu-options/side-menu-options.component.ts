@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {  Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 interface MenuOPtion {
@@ -14,16 +14,21 @@ interface MenuOPtion {
   templateUrl: './side-menu-options.component.html',
 })
 export class SideMenuOptionsComponent {
-  
+
   menuOPtion:MenuOPtion[] = [
-  {  icon: 'fa-solid fa-chart-line',
-    label: 'Trending',
-    subLabel: 'Gifs Populates',
+  {  icon: 'fa-solid fa-users',
+    label: 'Users',
+    subLabel: 'Lista de usuarios',
     Route: '/dashboard/trending'
   },
-  {  icon: 'fa-solid fa-magnifying-glass',
-    label: 'Buscador',
-    subLabel: 'Buscar gifs',
+  {  icon: 'fa-solid fa-book',
+    label: 'Books',
+    subLabel: 'Lista de libros',
+    Route: '/dashboard/search'
+  },
+  {  icon: 'fa-solid fa-share-from-square',
+    label: 'Loans',
+    subLabel: 'Lista de prestamos',
     Route: '/dashboard/search'
   },
   ];

@@ -14,7 +14,7 @@ import { HeadersService } from 'src/app/Library/services/headers.Service';
   imports: [],
   templateUrl: './list-item.component.html',
 })
-export class ListItemComponent { 
+export class ListItemComponent {
    imageUrl = input.required<User []>()
    constructor(private http: HttpClient,  private snackBar: MatSnackBar ) {}
       headers = inject(HeadersService).headers;
@@ -25,6 +25,16 @@ export class ListItemComponent {
       }
 
     desactiveUser(userId: number, status: number){
+<<<<<<< Updated upstream
+=======
+      const userPass = `${environment.basicAuthUser}:${environment.basicAuthPass}`;
+          const encodedCredentials = btoa(userPass); // función para Base64
+
+          const headers = {
+            Authorization: `Basic ${encodedCredentials}`
+          };
+
+>>>>>>> Stashed changes
       const params = new HttpParams()
       .set('user_id', userId)
       .set('status',status)
@@ -34,7 +44,7 @@ export class ListItemComponent {
           duration: 3000,
           verticalPosition: 'top',
            horizontalPosition: 'right', // start | center | end | left | right
-            panelClass: ['snackbar-success'] 
+            panelClass: ['snackbar-success']
         });
       },
       error: err => {
@@ -43,14 +53,24 @@ export class ListItemComponent {
           duration: 3000,
           verticalPosition: 'top',
             horizontalPosition: 'right',
-          panelClass: ['snackbar-error'] 
+          panelClass: ['snackbar-error']
         });
       }
     });
     }
 
       activeUser(userId: number, status: number){
+<<<<<<< Updated upstream
   
+=======
+      const userPass = `${environment.basicAuthUser}:${environment.basicAuthPass}`;
+          const encodedCredentials = btoa(userPass); // función para Base64
+
+          const headers = {
+            Authorization: `Basic ${encodedCredentials}`
+          };
+
+>>>>>>> Stashed changes
       const params = new HttpParams()
       .set('user_id', userId)
       .set('status', status)
@@ -61,7 +81,7 @@ export class ListItemComponent {
           duration: 3000,
           verticalPosition: 'top',
            horizontalPosition: 'right', // start | center | end | left | right
-            panelClass: ['snackbar-success'] 
+            panelClass: ['snackbar-success']
         });
       },
       error: err => {
@@ -69,22 +89,33 @@ export class ListItemComponent {
           duration: 3000,
           verticalPosition: 'top',
             horizontalPosition: 'right',
-          panelClass: ['snackbar-error'] 
+          panelClass: ['snackbar-error']
         });
       }
     });
     }
-   
+
 
     deleteUser(userId: number){
+<<<<<<< Updated upstream
          this.http.delete<ApiResponse<null>>(`${environment.BasicUrl}/users/${userId}`,{ headers: this.headers,  observe: 'response'}).subscribe({
+=======
+         const userPass = `${environment.basicAuthUser}:${environment.basicAuthPass}`;
+          const encodedCredentials = btoa(userPass); // función para Base64
+
+          const headers = {
+            Authorization: `Basic ${encodedCredentials}`
+          };
+
+                  this.http.delete(`${environment.BasicUrl}/users/${userId}`,{ headers}).subscribe({
+>>>>>>> Stashed changes
                 next: res => {
                     console.log('activado en el servicio', res);
                     this.snackBar.open(`${res.body?.message}✅`, 'Cerrar', {
                       duration: 3000,
                       verticalPosition: 'top',
                       horizontalPosition: 'right', // start | center | end | left | right
-                        panelClass: ['snackbar-success'] 
+                        panelClass: ['snackbar-success']
                     });
                   },
               error: err => {
@@ -94,9 +125,24 @@ export class ListItemComponent {
                   verticalPosition: 'top'
                 });
               }
+<<<<<<< Updated upstream
           });
       
     }
 
     
+=======
+            });
+
+    }
+
+     modalService = inject(ModalService);
+
+
+
+     abrirModalEditar(usuario: User) {
+        this.modalService.abrirModal(usuario);
+      }
+
+>>>>>>> Stashed changes
 }
