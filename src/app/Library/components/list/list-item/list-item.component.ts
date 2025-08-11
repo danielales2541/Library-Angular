@@ -25,16 +25,6 @@ export class ListItemComponent {
       }
 
     desactiveUser(userId: number, status: number){
-<<<<<<< Updated upstream
-=======
-      const userPass = `${environment.basicAuthUser}:${environment.basicAuthPass}`;
-          const encodedCredentials = btoa(userPass); // función para Base64
-
-          const headers = {
-            Authorization: `Basic ${encodedCredentials}`
-          };
-
->>>>>>> Stashed changes
       const params = new HttpParams()
       .set('user_id', userId)
       .set('status',status)
@@ -60,17 +50,7 @@ export class ListItemComponent {
     }
 
       activeUser(userId: number, status: number){
-<<<<<<< Updated upstream
   
-=======
-      const userPass = `${environment.basicAuthUser}:${environment.basicAuthPass}`;
-          const encodedCredentials = btoa(userPass); // función para Base64
-
-          const headers = {
-            Authorization: `Basic ${encodedCredentials}`
-          };
-
->>>>>>> Stashed changes
       const params = new HttpParams()
       .set('user_id', userId)
       .set('status', status)
@@ -97,18 +77,7 @@ export class ListItemComponent {
 
 
     deleteUser(userId: number){
-<<<<<<< Updated upstream
          this.http.delete<ApiResponse<null>>(`${environment.BasicUrl}/users/${userId}`,{ headers: this.headers,  observe: 'response'}).subscribe({
-=======
-         const userPass = `${environment.basicAuthUser}:${environment.basicAuthPass}`;
-          const encodedCredentials = btoa(userPass); // función para Base64
-
-          const headers = {
-            Authorization: `Basic ${encodedCredentials}`
-          };
-
-                  this.http.delete(`${environment.BasicUrl}/users/${userId}`,{ headers}).subscribe({
->>>>>>> Stashed changes
                 next: res => {
                     console.log('activado en el servicio', res);
                     this.snackBar.open(`${res.body?.message}✅`, 'Cerrar', {
@@ -125,24 +94,10 @@ export class ListItemComponent {
                   verticalPosition: 'top'
                 });
               }
-<<<<<<< Updated upstream
-          });
-      
-    }
-
-    
-=======
             });
 
     }
 
-     modalService = inject(ModalService);
 
 
-
-     abrirModalEditar(usuario: User) {
-        this.modalService.abrirModal(usuario);
-      }
-
->>>>>>> Stashed changes
 }
