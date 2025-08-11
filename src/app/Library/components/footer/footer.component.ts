@@ -1,13 +1,12 @@
-
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { environment } from '@environments/environment.development';
 
 @Component({
-  selector: 'nav-bar',
+  selector: 'app-footer',
   imports: [],
-  templateUrl: './nav-bar.component.html',
+  templateUrl: './footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavBarComponent {
-  src =environment.LogoHeader;
+export class FooterComponent {
+  logoFooter=environment.LogoFooter;
  }
